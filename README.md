@@ -1,1 +1,1 @@
-# pp1-LyricsComparison
+# capstone-eurovisionLyrics
