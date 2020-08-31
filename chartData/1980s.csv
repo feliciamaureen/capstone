@@ -1,0 +1,101 @@
+,name,album,artist,release_date,length,popularity,danceability,acousticness,danceability,energy,instrumentalness,liveness,loudness,speechiness,tempo,time_signature
+0,Woman in Love,Guilty,Barbra Streisand,1980-09-23,231840,69,0.469,0.248,0.469,0.278,0.000126,0.133,-16.311,0.028,169.735,4
+1,Baby Can I Hold You,Tracy Chapman,Tracy Chapman,1988-04-05,193120,76,0.692,0.0811,0.692,0.422,0.0,0.0848,-10.533,0.0333,74.375,4
+2,I Still Haven't Found What I'm Looking For - Remastered 2007,The Joshua Tree (Deluxe Edition Remastered),U2,1987-03-10,277480,2,0.565,0.0139,0.565,0.764,0.00488,0.079,-9.43,0.0351,100.891,4
+3,What's Love Got to Do with It,What's Love Got to Do with It?,Tina Turner,1993,226880,74,0.851,0.219,0.851,0.406,6.41e-06,0.0853,-11.631,0.0661,97.84,4
+4,The Power Of Love,Greatest Hits: Huey Lewis And The News,Huey Lewis & The News,2006-01-01,234333,77,0.768,0.0964,0.768,0.829,2.92e-05,0.097,-5.109,0.0313,118.773,4
+5,"The Heat Is On - From ""Beverly Hills Cop"" Soundtrack",Above The Clouds - The Collection (Deluxe),Glenn Frey,2018-04-27,227800,63,0.622,0.0167,0.622,0.865,2.34e-05,0.0692,-6.369,0.0531,149.706,4
+6,Summer Of '69,Reckless (30th Anniversary / Deluxe Edition),Bryan Adams,1984-11-05,216053,83,0.508,0.0183,0.508,0.834,0.0,0.0732,-6.205,0.0386,139.131,4
+7,It's a Sin - 2001 Remaster,Actually,Pet Shop Boys,1987-09-07,299306,67,0.538,0.252,0.538,0.86,0.000527,0.247,-5.916,0.0435,127.153,4
+8,I Wanna Dance with Somebody (Who Loves Me),Whitney,Whitney Houston,1987-06-02,291293,83,0.709,0.207,0.709,0.824,0.000307,0.0888,-8.824,0.0453,118.814,4
+9,All Around the World - Remastered,Affection,Lisa Stansfield,1989,265760,65,0.671,0.573,0.671,0.914,2.77e-06,0.0856,-4.598,0.107,101.201,4
+10,Billie Jean,Thriller 25 Super Deluxe Edition,Michael Jackson,1982-11-30,293826,83,0.92,0.0236,0.92,0.654,0.0158,0.0359,-3.051,0.0401,117.046,4
+11,Smalltown Boy,The Age of Consent,Bronski Beat,1984-10-15,302413,73,0.685,0.288,0.685,0.584,0.00918,0.124,-10.616,0.0276,134.546,4
+12,Back To Life,Keep On Movin',Soul II Soul,1989-01-01,228266,65,0.817,0.0525,0.817,0.485,0.00021,0.0391,-11.659,0.143,100.978,4
+13,A Groovy Kind of Love,Love Songs (A Compilation Old and New),Phil Collins,2004-09-14,210733,66,0.452,0.235,0.452,0.306,1.91e-05,0.0989,-9.632,0.0274,144.125,4
+14,"When the Going Gets Tough, The Tough Get Going",The Very Best of Billy Ocean,Billy Ocean,2010-04-26,248000,64,0.754,0.407,0.754,0.763,0.0,0.318,-6.318,0.0473,122.047,4
+15,Word Up,Word Up,Cameo,1986-01-01,260000,66,0.878,0.0421,0.878,0.84,0.0035,0.053,-13.105,0.064,116.222,4
+16,Guilty (feat. Barry Gibb),Guilty,Barbra Streisand,1980-09-23,264333,67,0.626,0.231,0.626,0.425,0.0,0.114,-15.656,0.0356,150.875,4
+17,You Keep Me Hangin On,Another Step,Kim Wilde,1986,255220,62,0.686,0.0806,0.686,0.682,0.000155,0.14,-12.154,0.033,123.44,4
+18,All Night Long (All Night) - Single Version,Back To Front,Lionel Richie,1992-01-01,258666,73,0.748,0.15,0.748,0.603,0.000261,0.0269,-12.044,0.043,108.831,4
+19,I'm On Fire,Born In The U.S.A.,Bruce Springsteen,1984-06-04,155880,76,0.62,0.589,0.62,0.446,0.0299,0.0727,-14.451,0.0347,88.591,4
+20,Gloria,Branigan,Laura Branigan,1982-03-10,289853,62,0.776,0.107,0.776,0.743,0.293,0.149,-6.807,0.0289,131.343,4
+21,Jump (Original Mix),Break Out (1983 Version - Expanded Edition),The Pointer Sisters,1983-04-01,262560,65,0.846,0.0867,0.846,0.826,0.0,0.12,-7.909,0.098,134.454,4
+22,Another Day in Paradise - 2016 Remaster,...But Seriously (Deluxe Edition),Phil Collins,1989-11-20,322133,75,0.78,0.736,0.78,0.565,0.00269,0.063,-7.32,0.0306,101.967,4
+23,Karma Chameleon - Remastered,Colour By Numbers,Culture Club,1983-10-01,252773,75,0.668,0.225,0.668,0.73,0.0,0.188,-7.182,0.0366,92.049,4
+24,Don't Leave Me This Way (with Sarah Jane Morris),Communards,The Communards,1986-01-01,271066,69,0.64,0.135,0.64,0.926,2.04e-06,0.134,-5.597,0.0322,131.997,4
+25,Dancing with Tears in My Eyes - Single Version / 2009 Remaster,Dancing with Tears in My Eyes (2009 Remaster),Ultravox,1984-06-09,249493,62,0.592,0.0856,0.592,0.916,9.27e-05,0.161,-6.9,0.0482,144.262,4
+26,Total Eclipse of the Heart,Definitive Collection,Bonnie Tyler,1995,269560,12,0.433,0.194,0.433,0.559,0.0,0.0732,-11.344,0.0636,130.2,4
+27,Endless Love,Back To Front,Lionel Richie,1992-01-01,266800,73,0.483,0.866,0.483,0.268,0.0163,0.145,-11.809,0.0257,93.47,4
+28,Always on My Mind,Discography - Complete Singles Collection,Pet Shop Boys,1998-03-31,234906,71,0.533,0.0116,0.533,0.783,0.0565,0.186,-10.61,0.0366,124.874,4
+29,Never Ending Story,Don't Suppose,Limahl,2009-09-25,212173,66,0.599,0.359,0.599,0.622,0.00235,0.114,-13.971,0.0296,122.312,4
+30,"Crockett's Theme - From ""Miami Vice II"" Soundtrack",Escape From Television,Jan Hammer,1991-05-27,214933,61,0.408,0.424,0.408,0.385,0.926,0.101,-16.604,0.0317,191.364,4
+31,Easy Lover,Chinese Wall (Expanded Edition),Philip Bailey,1984-10-01,305866,69,0.74,0.105,0.74,0.923,0.000163,0.0825,-5.082,0.0369,128.871,4
+32,Faith - Remastered,Faith,George Michael,1987-10-30,193200,61,0.887,0.0094,0.887,0.48,3.58e-05,0.0662,-11.994,0.117,95.846,4
+33,Club Tropicana,Fantastic,Wham!,1983-07-09,265600,69,0.658,0.0291,0.658,0.714,5.7e-05,0.651,-9.247,0.0521,117.276,4
+34,Stuck With You,Fore!,Huey Lewis & The News,1986-01-01,269573,65,0.704,0.0873,0.704,0.544,1.66e-05,0.041,-11.402,0.026,120.717,4
+35,Straight Up,Forever Your Girl,Paula Abdul,1988-01-01,251466,63,0.769,0.267,0.769,0.826,0.0177,0.0638,-8.252,0.0624,95.862,4
+36,Stuck On You,Can't Slow Down,Lionel Richie,1983-01-01,192066,71,0.509,0.621,0.509,0.317,5.28e-05,0.0878,-16.063,0.0305,131.783,4
+37,Every Time You Go Away - Radio Edit,From Time To Time - The Singles Collection,Paul Young,1991-09-07,267000,72,0.572,0.187,0.572,0.721,7.41e-06,0.216,-8.959,0.0402,164.252,4
+38,That's All - Digital Remastered 2007,Genesis,Genesis,1983-10-03,266173,63,0.579,0.253,0.579,0.669,0.0257,0.0911,-8.704,0.0326,175.181,4
+39,Together In Electric Dreams,The Greatest Hits,The Human League,1988,233493,59,0.697,0.18,0.697,0.611,2.04e-06,0.0876,-11.746,0.0258,129.96,4
+40,In The Air Tonight - 2015 Remastered,Face Value (Deluxe Editon),Phil Collins,1981-01-01,336453,79,0.446,0.551,0.446,0.239,4.1e-06,0.0697,-13.945,0.0316,189.507,4
+41,Axel F,Harold F,Harold Faltermeyer,1988-01-01,180866,60,0.799,0.016,0.799,0.491,0.843,0.094,-17.105,0.0891,117.285,4
+42,If I Could Turn Back Time,Heart Of Stone,Cher,1989-01-01,239826,73,0.658,0.243,0.658,0.575,0.0,0.122,-10.365,0.0267,108.329,4
+43,Hip To Be Square,Fore!,Huey Lewis & The News,1986-01-01,245466,66,0.668,0.0025,0.668,0.779,0.000347,0.139,-11.089,0.0325,140.873,4
+44,A Little Respect - 2009 Remastered Version,The Innocents,Erasure,1988-04-18,213986,71,0.607,0.0299,0.607,0.784,3.85e-06,0.288,-7.963,0.0258,113.804,4
+45,Hello,Can't Slow Down,Lionel Richie,1983-01-01,246933,69,0.424,0.646,0.424,0.222,0.0,0.148,-15.053,0.0391,61.648,4
+46,Sign Your Name,Introducing The Hardline According To Terence Trent D'Arby,Terence Trent D'Arby,1987-07-06,276533,62,0.899,0.202,0.899,0.421,4.94e-06,0.0864,-11.238,0.0511,109.148,4
+47,Land Of Confusion - 2007 Digital Remaster,Invisible Touch,Genesis,1986-06-09,286320,64,0.619,0.0173,0.619,0.939,0.000355,0.327,-6.787,0.0397,115.164,4
+48,Careless Whisper,Ladies And Gentlemen... The Best Of George Michael,George Michael,1998-11-09,300106,76,0.574,0.128,0.574,0.629,0.0,0.271,-8.815,0.0363,153.119,4
+49,You Can't Hurry Love - 2016 Remaster,"Hello, I Must Be Going! (Deluxe Edition)",Phil Collins,1982-11-05,175746,78,0.62,0.0261,0.62,0.936,0.0,0.0679,-4.593,0.0308,97.527,4
+50,Cheri Cheri Lady,Let's Talk About Love,Modern Talking,1985,226333,68,0.677,0.458,0.677,0.616,0.0132,0.349,-13.826,0.032,114.223,4
+51,Something About You - Single Version,Level Best,Level 42,1989-01-01,223440,62,0.707,0.0319,0.707,0.568,0.0298,0.055,-13.52,0.0291,105.326,4
+52,The Look Of Love - Pt. 1,The Lexicon Of Love,ABC,1982-06-21,209160,63,0.731,0.11,0.731,0.91,0.000447,0.313,-4.559,0.0918,120.991,4
+53,Like a Virgin,Like a Virgin (Reissue),Madonna,1984-11-12,218626,72,0.773,0.202,0.773,0.656,0.00323,0.0697,-10.88,0.0381,119.754,4
+54,Dancing On The Ceiling,Dancing On The Ceiling,Lionel Richie,1986,270720,71,0.698,0.12,0.698,0.774,2.26e-06,0.394,-8.642,0.048,133.197,4
+55,Tarzan Boy,Living In The Background,Baltimora,1985-01-01,378946,69,0.684,0.318,0.684,0.573,0.028,0.306,-12.3,0.0261,107.363,4
+56,The Look,Look Sharp! (2009 Version),Roxette,1988-10-19,237320,23,0.634,0.0531,0.634,0.838,8.34e-06,0.0522,-5.363,0.0413,95.011,4
+57,Wake Me up Before You Go-Go,Make It Big,Wham!,1984-10-23,231333,80,0.62,0.272,0.62,0.574,0.0,0.0607,-11.893,0.0421,81.548,4
+58,Thriller,Michael Jackson's This Is It,Michael Jackson,2009,357493,61,0.775,0.0906,0.775,0.857,0.000172,0.918,-4.943,0.0699,118.419,4
+59,Kayleigh - 2017 Remaster,Misplaced Childhood (2017 Remaster),Marillion,1985-06-17,243560,63,0.585,0.247,0.585,0.567,0.0023,0.102,-8.35,0.0263,106.127,4
+60,Sussudio - 2016 Remaster,No Jacket Required (2016 Remaster),Phil Collins,1985-01-25,263106,68,0.714,0.0529,0.714,0.935,0.0934,0.0515,-5.195,0.0849,121.232,4
+61,One Night In Bangkok - From “Chess” / Remastered 2016,One Night In Bangkok (From “Chess” / Remastered 2016),Murray Head,2016-02-26,193440,61,0.954,0.193,0.954,0.451,0.00295,0.0637,-9.124,0.108,108.842,4
+62,Enola Gay - Remastered,Organisation,Orchestral Manoeuvres In The Dark,1980-10-24,213693,68,0.559,0.00441,0.559,0.764,0.0299,0.0807,-7.058,0.0348,143.319,4
+63,"Say You, Say Me",Dancing On The Ceiling,Lionel Richie,1986,241066,72,0.636,0.355,0.636,0.405,0.0,0.0804,-11.113,0.0287,128.068,4
+64,Good Life,Paradise,Inner City,1989,244773,61,0.716,0.172,0.716,0.783,0.0346,0.0327,-12.876,0.0496,121.306,4
+65,Listen To Your Heart,Look Sharp! (Extended Version),Roxette,1988-10-21,328093,75,0.539,0.108,0.539,0.583,0.0,0.111,-4.935,0.0275,86.063,4
+66,Everything She Wants,Make It Big,Wham!,1984-10-23,302693,66,0.9,0.321,0.9,0.459,0.00399,0.165,-15.557,0.0366,115.091,4
+67,Holding Back the Years - 2008 Remaster,Picture Book (Expanded Version),Simply Red,1985,269840,70,0.707,0.58,0.707,0.514,0.000159,0.0953,-8.885,0.0281,86.035,4
+68,West End Girls - 2001 Remaster,Please,Pet Shop Boys,1986-03-24,285733,65,0.651,0.00737,0.651,0.949,0.125,0.286,-6.566,0.0403,113.257,4
+69,Angel Eyes (Home And Away),Popped In Souled Out,Wet Wet Wet,1987-01-01,316866,61,0.623,0.366,0.623,0.529,0.0,0.0554,-12.221,0.027,94.153,4
+70,Pump Up The Jam,Pump Up The Jam,Technotronic,1989,320306,65,0.885,0.0147,0.885,0.844,4.49e-06,0.0494,-9.225,0.0733,124.602,4
+71,Islands in the Stream,Pure & Simple,Dolly Parton,2016-08-19,250053,69,0.611,0.68,0.611,0.524,0.0,0.0753,-8.256,0.035,203.787,4
+72,Good Thing,The Raw & The Cooked,Fine Young Cannibals,1988-01-01,201866,65,0.747,0.0708,0.747,0.586,8e-05,0.0427,-10.119,0.0299,164.718,4
+73,Brother Louie,Ready For Romance,Modern Talking,1986,222666,70,0.783,0.396,0.783,0.836,0.0236,0.135,-9.223,0.0486,108.966,4
+74,Lessons In Love,Running In The Family,Level 42,1987,246013,66,0.709,0.159,0.709,0.839,0.00209,0.301,-8.403,0.0367,113.186,4
+75,"Holding Out for a Hero - From ""Footloose"" Soundtrack",Secret Dreams and Forbidden Fire,Bonnie Tyler,1986-05-05,348333,74,0.615,0.0243,0.615,0.683,1.08e-05,0.0491,-15.29,0.04,150.057,4
+76,I'm So Excited,So Excited! (Expanded Edition),The Pointer Sisters,1982-02-01,230640,72,0.59,0.0962,0.59,0.868,0.000322,0.442,-5.832,0.048,184.348,4
+77,Shout,Songs From The Big Chair,Tears For Fears,1985-02-25,393666,73,0.511,0.174,0.511,0.942,1.87e-05,0.139,-10.407,0.0429,97.909,4
+78,Sweet Little Mystery,Popped In Souled Out,Wet Wet Wet,1987-01-01,224933,62,0.711,0.408,0.711,0.581,0.0,0.0709,-14.108,0.0357,117.084,4
+79,How Am I Supposed to Live Without You,Soul Provider,Michael Bolton,1989-06-27,255666,71,0.541,0.191,0.541,0.44,0.0,0.114,-12.206,0.031,140.273,4
+80,I Can Dream About You,Streets Of Fire,Various Artists,1984-01-01,247800,60,0.747,0.1,0.747,0.533,0.0,0.0344,-12.165,0.0554,112.987,4
+81,(I'll Never Be) Maria Magdalena - Single Verison,Ten On One,Sandra,1987-01-01,239826,63,0.613,0.0992,0.613,0.559,0.0205,0.314,-14.127,0.0268,104.1,4
+82,True Colors,True Colors,Cyndi Lauper,1986-10-14,226066,71,0.386,0.792,0.386,0.145,0.000196,0.1,-16.94,0.0362,171.63,4
+83,Don't Go,Upstairs at Eric's,Yazoo,1982-07-01,188466,66,0.803,0.312,0.803,0.411,0.00344,0.0411,-16.013,0.0521,126.236,4
+84,"Get Outta My Dreams, Get Into My Car",The Very Best of Billy Ocean,Billy Ocean,2010-04-26,284373,64,0.666,0.0879,0.666,0.91,8.43e-06,0.335,-6.457,0.0399,117.141,4
+85,Where Do Broken Hearts Go,Whitney,Whitney Houston,1987-06-02,277600,67,0.464,0.632,0.464,0.386,0.0,0.0682,-12.174,0.0292,61.868,4
+86,Everybody Wants To Rule The World,Songs From The Big Chair (Super Deluxe Edition),Tears For Fears,1985-02-25,251488,83,0.645,0.347,0.645,0.795,0.00389,0.104,-12.095,0.0527,112.067,4
+87,Wonderful Life,Wonderful Life,Black,1987-01-01,287933,66,0.72,0.705,0.72,0.521,0.36,0.214,-12.468,0.0302,106.055,4
+88,Smooth Operator - Single Version,The Best Of Sade,Sade,1994-10-31,258693,64,0.734,0.24,0.734,0.581,0.000585,0.0298,-6.619,0.032,119.337,4
+89,Poison,Trash,Alice Cooper,1989-07-25,270080,73,0.28,0.0327,0.28,0.908,8.85e-06,0.18,-5.509,0.109,118.698,4
+90,Part-Time Lover,In Square Circle,Stevie Wonder,1985-09-13,252560,68,0.662,0.165,0.662,0.624,0.0,0.0674,-13.606,0.0417,174.513,4
+91,Somebody's Watching Me - Single Version,Scream,Michael Jackson,2017-09-27,237760,71,0.767,0.0409,0.767,0.712,8.08e-05,0.132,-4.128,0.0324,124.091,4
+92,Only You,Upstairs at Eric's,Yazoo,1982-07-01,194173,67,0.752,0.332,0.752,0.307,0.000135,0.0829,-17.063,0.0398,106.158,4
+93,Caribbean Queen (No More Love On the Run),The Very Best of Billy Ocean,Billy Ocean,2010-04-26,244426,68,0.79,0.166,0.79,0.649,8.68e-05,0.092,-7.506,0.0265,113.797,4
+94,Saving All My Love for You,Whitney Houston,Whitney Houston,1985-02-14,238466,66,0.636,0.593,0.636,0.264,4.22e-05,0.275,-14.567,0.0263,99.304,3
+95,Addicted To Love,Riptide,Robert Palmer,1985-01-01,363640,71,0.702,0.382,0.702,0.578,5.89e-06,0.0425,-13.415,0.031,111.617,4
+96,Invisible Touch - Remastered,Invisible Touch,Genesis,1986-06-09,210133,69,0.623,0.202,0.623,0.94,0.00184,0.0472,-5.731,0.0365,131.037,4
+97,Black Velvet,Alannah Myles,Alannah Myles,1989-03-14,287440,72,0.754,0.273,0.754,0.366,9.04e-05,0.106,-10.07,0.0312,91.147,4
+98,1999,1999,Prince,1982-10-27,379266,69,0.866,0.137,0.866,0.73,0.0,0.0843,-8.201,0.0767,118.523,4
+99,I Just Called To Say I Love You,At The Close Of A Century,Stevie Wonder,1999-11-23,262240,76,0.748,0.243,0.748,0.551,1.57e-06,0.0943,-9.054,0.0239,113.535,4

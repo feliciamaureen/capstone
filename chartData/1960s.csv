@@ -1,0 +1,101 @@
+,name,album,artist,release_date,length,popularity,danceability,acousticness,danceability,energy,instrumentalness,liveness,loudness,speechiness,tempo,time_signature
+0,I Say a Little Prayer,Respect - The Very Best of,Aretha Franklin,2017-03-25,216773,62,0.59,0.48,0.59,0.355,0.0,0.0585,-14.051,0.0352,133.03,4
+1,Puppy Love - Remix,Put Your Head On My Shoulder: The Very Best Of Paul Anka,Paul Anka,2000-10-03,164000,58,0.29,0.662,0.29,0.408,0.0,0.272,-9.607,0.0318,102.229,3
+2,Apache,Another String Of Hot Hits (And More!),The Shadows,1987-10-05,174186,57,0.595,0.0106,0.595,0.451,0.929,0.0962,-12.987,0.0288,133.673,4
+3,Runaway - Rerecorded,#1 Hits Of The 60's,Various Artists,2009-09-30,147080,61,0.712,0.0893,0.712,0.819,2.97e-06,0.11,-6.826,0.094,143.563,4
+4,I Heard It Through The Grapevine,In The Groove,Marvin Gaye,1968-08-26,194293,74,0.711,0.272,0.711,0.362,0.0,0.127,-10.851,0.0381,117.287,4
+5,Breaking Up Is Hard to Do,Collections,Neil Sedaka,2003-03-29,136266,61,0.742,0.788,0.742,0.674,0.0,0.0698,-7.648,0.0354,116.53,4
+6,A Whiter Shade Of Pale,A Whiter Shade Of Pale,Procol Harum,1967-05-12,248946,0,0.249,0.504,0.249,0.66,0.0026,0.0891,-6.905,0.0342,149.813,4
+7,(What A) Wonderful World,The Man Who Invented Soul,Sam Cooke,2000-09-26,125440,73,0.691,0.627,0.691,0.507,0.0,0.457,-10.23,0.0343,128.518,4
+8,Playboy,Playboy,The Marvelettes,1962-01-01,164840,43,0.863,0.371,0.863,0.691,0.0,0.0597,-5.611,0.0535,123.757,4
+9,California Dreamin' - Single Version,Gold,The Mamas & The Papas,2005,158720,0,0.557,0.472,0.557,0.698,0.0,0.057,-7.471,0.039,112.479,4
+10,Ring of Fire,Johnny Cash - 16 Biggest Hits,Johnny Cash,1999-02-02,155733,0,0.67,0.73,0.67,0.519,3.1e-05,0.379,-9.28,0.0308,104.357,4
+11,Bad Moon Rising,Green River (40th Anniversary Edition),Creedence Clearwater Revival,1969-08-03,141600,1,0.641,0.0543,0.641,0.774,1.05e-05,0.0473,-5.916,0.0278,89.787,4
+12,Itsy Bitsy Teenie Weenie Yellow Polka Dot Bikini (Bonus Track),Let Me Belong To You (Expanded Edition),Brian Hyland,2012-01-31,141892,0,0.814,0.522,0.814,0.266,0.0,0.0243,-17.523,0.192,123.304,4
+13,Stand By Me,Stand By Me,Ben E. King,2016-11-25,174253,60,0.653,0.411,0.653,0.334,3.47e-05,0.123,-6.955,0.0313,119.46,4
+14,Surf City,Surf City And Other Swingin' Cities,Jan & Dean,2010-01-01,147266,54,0.534,0.497,0.534,0.807,5e-05,0.232,-12.871,0.0349,147.843,4
+15,Here Comes The Sun - Remastered,Abbey Road (Remastered),The Beatles,1969-09-26,185733,2,0.557,0.0339,0.557,0.54,0.00248,0.179,-10.484,0.0347,129.171,4
+16,No Particular Place To Go - Stereo Remix,Rock 'N' Roll Rarities,Chuck Berry,1986-01-01,164400,31,0.574,0.212,0.574,0.542,0.000117,0.0645,-11.578,0.0657,129.646,4
+17,Hey Baby,All About Baby,Bruce Channel,2013-01-01,140573,38,0.655,0.695,0.655,0.491,0.0,0.324,-10.349,0.0349,132.278,4
+18,Big Girls Don't Cry,Sherry and 11 Other Hits,Frankie Valli & The Four Seasons,1962-10-01,148013,62,0.764,0.393,0.764,0.84,8.64e-06,0.0686,-5.023,0.0672,130.276,4
+19,Viva Las Vegas,Best Of Elvis Presley,Elvis Presley,2001-07-09,140866,0,0.577,0.757,0.577,0.612,0.0,0.283,-12.181,0.0438,145.029,4
+20,Speedy Gonzales,Pat Boone's Greatest Hits (Reissue),Pat Boone,1962-08-01,153093,52,0.589,0.821,0.589,0.447,0.0,0.0999,-12.912,0.0748,146.845,4
+21,Sugar Sugar,Everything's Archie,The Archies,1969-11-14,167213,65,0.757,0.399,0.757,0.727,0.0,0.108,-7.259,0.0275,122.439,4
+22,"Folsom Prison Blues - Live at Folsom State Prison, Folsom, CA - January 1968",At Folsom Prison,Johnny Cash,1968-05-01,162653,71,0.621,0.0652,0.621,0.524,0.00199,0.893,-15.269,0.0803,110.586,4
+23,Do You Love Me,Essential,The Contours,2000-01-01,174400,54,0.615,0.475,0.615,0.815,0.0,0.0964,-7.128,0.0373,150.733,4
+24,You're Nobody 'Til Somebody Loves You - Remastered/1997,This Time I'm Swingin',Dean Martin,1960,133933,59,0.503,0.776,0.503,0.182,0.0,0.178,-16.651,0.0323,63.684,4
+25,I'm Sorry,Brenda Lee Her Dynamite Hits,Brenda Lee,2011-04-10,161533,0,0.56,0.862,0.56,0.244,0.000251,0.129,-11.872,0.0291,102.064,3
+26,Be My Baby,Presenting the Fabulous Ronettes Featuring Veronica,The Ronettes,2012-04-24,160906,54,0.512,0.168,0.512,0.771,0.0,0.0895,-7.006,0.0402,129.639,4
+27,Rubber Ball,Come Go With Me,Bobby Vee,2013-07-04,136911,0,0.441,0.627,0.441,0.413,0.0,0.133,-11.043,0.0371,142.963,4
+28,Travelin' Man - Remastered,Rick Is 21,Ricky Nelson,1961-01-01,143200,54,0.723,0.667,0.723,0.44,0.0,0.128,-10.536,0.0319,123.217,4
+29,The Wanderer,The Best Of Dion,Dion,2001-01-01,167160,60,0.623,0.193,0.623,0.48,0.0,0.11,-13.215,0.0392,114.436,4
+30,Da Doo Ron Ron (When He Walked Me Home),Da Doo Ron Ron: The Very Best of The Crystals,The Crystals,2011-02-22,140120,59,0.535,0.48,0.535,0.797,3.42e-05,0.141,-7.533,0.0459,148.835,4
+31,Mr. Lonely,16 Most Requested Songs,Bobby Vinton,1991-09-03,160066,42,0.37,0.804,0.37,0.185,1.35e-06,0.288,-14.335,0.028,84.392,3
+32,Something's Got A Hold On Me - Single Version,Mad Men: A Musical Companion (1960-1965),Various Artists,2011-01-01,166466,0,0.474,0.675,0.474,0.566,0.0,0.548,-5.913,0.113,150.122,4
+33,Poetry In Motion,Teen Idol Best,Johnny Tillotson,2011-07-01,154466,42,0.488,0.404,0.488,0.712,0.0,0.0989,-7.419,0.0322,135.201,4
+34,Runaway,Runaway: The Very Best Of Del Shannon,Del Shannon,2009-01-01,136466,48,0.584,0.137,0.584,0.563,1.83e-05,0.174,-6.826,0.0455,78.674,4
+35,Under the Boardwalk,Under the Boardwalk,The Drifters,1964-06-01,161960,71,0.747,0.908,0.747,0.226,0.000168,0.107,-13.635,0.0415,123.789,4
+36,Take Good Care Of My Baby,Take Good Care Of My Baby,Bobby Vee,1962-02-01,149800,56,0.487,0.761,0.487,0.441,0.0,0.15,-11.297,0.0722,82.707,4
+37,Tell Laura I Love Her,"Corrina, Corrina....It's Ray Peterson!",Ray Peterson,1960-04-14,175360,44,0.483,0.714,0.483,0.788,0.0,0.155,-0.062,0.0386,102.363,3
+38,Runaround Sue,Runaround Sue,Dion,1961,171600,65,0.364,0.451,0.364,0.607,0.0,0.251,-9.791,0.125,79.987,4
+39,Crazy - Single Version,Showcase,Patsy Cline,1961-11-27,164573,66,0.471,0.931,0.471,0.021,1.19e-06,0.103,-24.385,0.0366,107.765,3
+40,"Hello Mary Lou, Goodbye Heart - Remastered",Rick Is 21,Ricky Nelson,1961-01-01,138546,55,0.602,0.502,0.602,0.633,0.0,0.0614,-9.756,0.0314,98.995,4
+41,One Fine Day,The Chiffons Absolutely The Best!,The Chiffons,2004-10-02,128199,63,0.251,0.488,0.251,0.868,7.34e-06,0.814,-2.685,0.128,177.13,4
+42,Crying in the Rain,The Golden Hits Of The Everly Brothers,The Everly Brothers,1962-06-01,120306,57,0.61,0.622,0.61,0.378,0.0,0.144,-9.381,0.0279,97.166,4
+43,Baby (You've Got What It Takes),The Two Of Us,Dinah Washington,1960-07-05,165760,55,0.67,0.852,0.67,0.596,0.00203,0.653,-9.347,0.0627,133.396,4
+44,Sway (Quien Sera),"Hey, Brother Pour The Wine",Dean Martin,1964,162960,61,0.601,0.727,0.601,0.239,1.43e-06,0.0748,-12.175,0.0384,120.036,4
+45,"Happy Birthday, Sweet Sixteen",Circulate (Expanded Edition),Neil Sedaka,1960-12-30,157026,48,0.498,0.607,0.498,0.796,0.0,0.3,-4.882,0.0453,79.648,4
+46,I Get The Sweetest Feeling,I Get The Sweetest Feeling,Jackie Wilson,1968,178373,60,0.684,0.778,0.684,0.482,0.000351,0.148,-9.234,0.0371,123.532,4
+47,Let's Twist Again,Cameo Parkway - The Best Of Chubby Checker (Original Hit Recordings) [International Version],Chubby Checker,1961-01-01,136666,0,0.605,0.244,0.605,0.747,0.0,0.16,-6.923,0.158,83.793,4
+48,Blue Moon,The Best Of The Marcels,The Marcels,1990-06-11,138360,50,0.624,0.656,0.624,0.432,0.0,0.0785,-11.132,0.0344,127.69,4
+49,Jump in the Line,Jump Up Calypso,Harry Belafonte,1961-07-21,221704,64,0.594,0.768,0.594,0.889,0.0,0.124,-7.775,0.246,116.187,4
+50,He's So Fine - Remastered 2000,The Chiffons Absolutely The Best!,The Chiffons,2004-10-02,112520,55,0.558,0.487,0.558,0.633,0.0,0.129,-3.265,0.0329,72.494,4
+51,"(Ummmm, Oh Yeah) Dearest",Giant,Buddy Holly,1969-01-01,113066,51,0.548,0.577,0.548,0.493,0.0195,0.13,-11.052,0.0282,115.24,4
+52,I Walk the Line - Stereo Version,I Walk the Line (Stereo Version),Johnny Cash,1964-06-13,154173,65,0.596,0.97,0.596,0.194,0.162,0.099,-20.389,0.0347,114.974,4
+53,Ain't That A Kick In The Head,The Capitol Years,Dean Martin,1996-05-30,145800,56,0.661,0.458,0.661,0.311,0.0,0.233,-9.549,0.0701,132.008,4
+54,Breaking Up Is Hard to Do,Circulate (Expanded Edition),Neil Sedaka,1960-12-30,139200,63,0.743,0.699,0.743,0.799,0.0,0.0635,-5.466,0.0375,116.112,4
+55,She's Got You,The Very Best Of Patsy Cline,Patsy Cline,1998-03-01,189866,0,0.565,0.881,0.565,0.167,0.0,0.0884,-13.379,0.0354,90.791,3
+56,It's My Party,The Number 1 Rock 'N' Roll Collection,Various Artists,2003-01-01,134453,0,0.797,0.581,0.797,0.542,0.0105,0.126,-8.966,0.045,133.704,4
+57,Ramblin' Gamblin' Man,Ramblin' Gamblin' Man,Bob Seger,1969-04-01,145310,67,0.601,0.0232,0.601,0.84,0.0,0.0569,-3.828,0.0509,130.811,4
+58,Crying,Crying,Roy Orbison,1962-01-01,166466,62,0.35,0.758,0.35,0.293,8.21e-06,0.104,-9.502,0.0258,96.685,4
+59,Sunny Afternoon - Mono Mix,Face to Face (Deluxe Edition),The Kinks,1966-10-28,210525,69,0.595,0.102,0.595,0.465,0.0,0.0641,-8.412,0.026,124.991,4
+60,Bad Moon Rising,Green River (40th Anniversary Edition),Creedence Clearwater Revival,1969-08-03,141600,79,0.508,0.0586,0.508,0.774,4.87e-06,0.063,-5.973,0.0321,178.946,4
+61,Like a Rolling Stone,Highway 61 Revisited,Bob Dylan,1965-08-30,369600,73,0.483,0.729,0.483,0.721,0.0,0.189,-6.836,0.032,95.261,4
+62,The Sound of Silence - Acoustic Version,"Wednesday Morning, 3 A.M.",Simon & Garfunkel,1964-10-19,185413,75,0.525,0.837,0.525,0.216,0.0,0.107,-13.551,0.0301,106.761,4
+63,Save the Last Dance for Me,Save the Last Dance for Me,The Drifters,2005-02-08,154960,62,0.54,0.614,0.54,0.53,0.0,0.198,-10.583,0.0361,143.453,4
+64,I Started A Joke,Idea (Deluxe Edition),Bee Gees,1968-08-11,188306,67,0.31,0.156,0.31,0.464,8.94e-06,0.132,-8.755,0.0275,144.775,4
+65,Good Times Bad Times - 1993 Remaster,Led Zeppelin,Led Zeppelin,1969-01-12,166266,71,0.476,0.0382,0.476,0.717,7.61e-05,0.0818,-9.192,0.0949,93.584,4
+66,For Once In My Life,For Once In My Life,Stevie Wonder,1968-12-01,169800,73,0.524,0.195,0.524,0.519,0.0,0.523,-11.903,0.043,110.121,4
+67,Only the Lonely,Sings Lonely and Blue,Roy Orbison,1961,145533,63,0.57,0.377,0.57,0.529,0.00509,0.203,-10.769,0.028,123.273,4
+68,You Really Got Me - Mono Mix,Kinks,The Kinks,1964-10-02,134253,73,0.573,0.493,0.573,0.939,0.0,0.0994,-6.441,0.0808,137.382,4
+69,For What It's Worth,Buffalo Springfield,Buffalo Springfield,1966-12-05,153693,76,0.653,0.406,0.653,0.519,0.0209,0.101,-10.164,0.0497,98.883,4
+70,Do You Believe in Magic?,Do you Believe In Magic,The Lovin' Spoonful,1965-11,125826,69,0.552,0.218,0.552,0.742,0.0,0.339,-7.963,0.0454,138.591,4
+71,Ferry Cross the Mersey - Stereo; 1997 Remaster,Ferry Cross The Mersey [Mono And Stereo Version],Gerry & The Pacemakers,1965-02-01,143866,59,0.396,0.548,0.396,0.286,8.51e-06,0.122,-11.494,0.0283,105.289,4
+72,Silence Is Golden,Love Songs,The Tremeloes,1997-05-20,190933,56,0.436,0.0557,0.436,0.565,0.0,0.244,-7.268,0.0294,112.169,4
+73,Born To Be Wild,Steppenwolf,Steppenwolf,1968,210373,74,0.438,0.262,0.438,0.71,0.537,0.221,-12.412,0.0919,145.928,4
+74,I Want You Back,Diana Ross Presents The Jackson 5,The Jackson 5,1969-12-18,176333,77,0.469,0.305,0.469,0.538,0.00012,0.37,-13.559,0.0571,196.605,4
+75,A Place In The Sun,Down To Earth,Stevie Wonder,1966-11-01,172960,55,0.561,0.279,0.561,0.447,0.0,0.319,-11.389,0.0544,117.784,4
+76,Sunday Morning,The Velvet Underground & Nico 45th Anniversary,The Velvet Underground,1967-03-12,175893,67,0.506,0.0869,0.506,0.442,0.00239,0.0846,-13.268,0.0276,105.826,4
+77,Somethin' Stupid,The World We Knew,Frank Sinatra,1967-08,162493,71,0.257,0.736,0.257,0.338,0.0,0.252,-12.902,0.0357,207.356,4
+78,Somebody to Love,Surrealistic Pillow,Jefferson Airplane,1967,174840,71,0.504,0.408,0.504,0.578,0.0,0.321,-9.302,0.031,132.411,4
+79,Whole Lotta Love - 1990 Remaster,Led Zeppelin II (1994 Remaster),Led Zeppelin,1969-10-22,333893,77,0.412,0.0484,0.412,0.902,0.131,0.405,-11.6,0.405,89.74,4
+80,"Mrs. Robinson - From ""The Graduate"" Soundtrack",Bookends,Simon & Garfunkel,1968-04-03,244026,78,0.606,0.713,0.606,0.457,2.53e-05,0.0747,-14.035,0.0497,92.033,4
+81,Baby I Need Your Loving,Four Tops,Four Tops,1965-01-01,166026,64,0.632,0.437,0.632,0.686,0.0,0.193,-6.116,0.0395,121.414,4
+82,Aquarius/Let The Sunshine In (The Flesh Failures) [Remastered],The Essential Fifth Dimension,The 5th Dimension,2011-03-15,290400,50,0.312,0.47,0.312,0.555,1.43e-06,0.084,-10.05,0.0377,118.235,4
+83,Who's Lovin' You,Diana Ross Presents The Jackson 5,The Jackson 5,1969-12-18,235640,62,0.247,0.648,0.247,0.307,2.43e-05,0.281,-13.16,0.0371,161.982,3
+84,I Was Made To Love Her,I Was Made To Love Her,Stevie Wonder,1967-08-01,158666,38,0.349,0.296,0.349,0.543,0.0,0.0665,-10.577,0.0429,202.426,4
+85,(Love Is Like A) Heat Wave,Heat Wave,Martha Reeves & The Vandellas,1963,163053,63,0.514,0.513,0.514,0.624,0.00517,0.307,-9.287,0.0842,166.726,4
+86,Strangers In The Night,Strangers In The Night (Expanded Edition),Frank Sinatra,1966-05,157866,68,0.259,0.592,0.259,0.473,0.0,0.201,-8.275,0.0295,90.348,4
+87,White Rabbit,Surrealistic Pillow,Jefferson Airplane,1967,150640,70,0.551,0.486,0.551,0.293,0.000273,0.0864,-12.503,0.0272,106.798,4
+88,Get Ready,Gettin' Ready (Expanded Edition),The Temptations,1966,164160,66,0.59,0.404,0.59,0.737,0.0,0.108,-5.867,0.0384,132.966,4
+89,Then He Kissed Me,Da Doo Ron Ron: The Very Best of The Crystals,The Crystals,2011-02-22,158853,61,0.431,0.7,0.431,0.678,6.37e-06,0.199,-7.945,0.0365,135.919,4
+90,Down On The Corner,Willy And The Poor Boys (40th Anniversary Edition),Creedence Clearwater Revival,1969-11-02,166280,0,0.831,0.594,0.831,0.544,0.00389,0.0736,-9.288,0.0837,108.177,4
+91,Spanish Eyes,Premium Gold Collection,Al Martino,1977-01-01,166866,48,0.515,0.359,0.515,0.49,4.56e-05,0.0875,-8.565,0.0284,109.29,4
+92,"Moon River (From ""Breakfast at Tiffany's"")",Moon River And Other Great Movie Themes,Andy Williams,1962,162893,65,0.281,0.86,0.281,0.212,7.73e-05,0.119,-15.513,0.031,95.555,3
+93,Don't Let Me Be Misunderstood,A's B's & EP's,The Animals,2003-05-05,145693,52,0.546,0.146,0.546,0.568,0.0,0.77,-9.604,0.0285,112.584,4
+94,Respect,I Never Loved a Man the Way I Love You,Aretha Franklin,1967-03-10,147600,74,0.805,0.164,0.805,0.558,2.2e-05,0.0546,-5.226,0.041,114.95,4
+95,Sweet Soul Music,Oldies 60's,Various Artists,2017-08-10,141066,47,0.59,0.104,0.59,0.659,6.56e-06,0.356,-9.669,0.0697,80.201,4
+96,Raindrops Keep Fallin' on My Head,Classics from American Film,Various Artists,2013-01-28,173026,27,0.739,0.481,0.739,0.406,7.73e-05,0.0709,-8.696,0.0349,110.846,4
+97,The Night They Drove Old Dixie Down - Remastered 2000,The Band (Expanded Edition),The Band,1969-09-22,213266,66,0.507,0.453,0.507,0.493,0.0,0.241,-8.786,0.0327,127.671,4
+98,Eve Of Destruction,Eve Of Destruction,Barry McGuire,1965-01-01,215826,59,0.613,0.387,0.613,0.307,4.52e-06,0.087,-17.385,0.0414,117.305,4
+99,I Get Around (Mono),All Summer Long,The Beach Boys,1964-07-13,134386,68,0.39,0.36,0.39,0.625,0.0,0.0663,-7.813,0.0537,144.338,4
