@@ -36,17 +36,31 @@ def convLower(text):
     text = text.lower()
     return text
 
-#remove punctuation 
+#remove punctuation
 def removePunctuation(text):
     text = "".join([char for char in text if char not in string.punctuation])
+    return text
+
+#remove non-alphabet characters
+def removeNonAlphabet(text):
+    regex = re.sub(r'[^a-zA-Z]', '', text) 
+    return text
+
+#remove numbers
+def removeNumbers(text):
+    text = "".join(i for i in text if not i.isdigit())
     return text
 
 def cleanText(data):
     data = convLower(data)
     data = removePunctuation(data)
+    data = removeNonAlphabet(data)
+    data = removeNumbers(data)
+    data = removePunctuation(data)
     return data
 
 #clean lyrics
+cleanEV = cleanText(eurovisionLyrics)
 clean60s = cleanText(lyrics60s)
 clean70s = cleanText(lyrics70s)
 clean80s = cleanText(lyrics80s)
@@ -55,7 +69,7 @@ clean00s = cleanText(lyrics00s)
 clean10s = cleanText(lyrics10s)
 
 #tokenize as words
-wordsEurovision = word_tokenize(eurovisionLyrics)
+wordsEurovision = word_tokenize(cleanEV)
 words60s = word_tokenize(clean60s)
 words70s = word_tokenize(clean70s)
 words80s = word_tokenize(clean80s)
@@ -64,7 +78,7 @@ words00s = word_tokenize(clean00s)
 words10s = word_tokenize(clean10s)
 
 #tokenize to sentences - not perfect
-senEurovision = sent_tokenize(eurovisionLyrics)
+senEurovision = sent_tokenize(cleanEV)
 sen60s = sent_tokenize(clean60s)
 sen70s = sent_tokenize(clean70s)
 sen80s = sent_tokenize(clean80s)
