@@ -2,9 +2,11 @@ import pandas as pd
 import numpy as np
 import nltk
 import string
+import re
 
 from nltk.tokenize import word_tokenize
 from nltk.tokenize import sent_tokenize
+from contractions import expandContractions
 
 #lyric files
 eurovision = open("data/intersection.txt", "r")
@@ -53,6 +55,7 @@ def removeNumbers(text):
 
 def cleanText(data):
     data = convLower(data)
+    data = expandContractions(data)
     data = removePunctuation(data)
     data = removeNonAlphabet(data)
     data = removeNumbers(data)
@@ -67,6 +70,7 @@ clean80s = cleanText(lyrics80s)
 clean90s = cleanText(lyrics90s)
 clean00s = cleanText(lyrics00s)
 clean10s = cleanText(lyrics10s)
+cleanDecades = clean60s + clean70s + clean80s + clean90s + clean00s + clean10s
 
 #tokenize as words
 wordsEurovision = word_tokenize(cleanEV)
@@ -76,15 +80,7 @@ words80s = word_tokenize(clean80s)
 words90s = word_tokenize(clean90s)
 words00s = word_tokenize(clean00s)
 words10s = word_tokenize(clean10s)
-
-#tokenize to sentences - not perfect
-senEurovision = sent_tokenize(cleanEV)
-sen60s = sent_tokenize(clean60s)
-sen70s = sent_tokenize(clean70s)
-sen80s = sent_tokenize(clean80s)
-sen90s = sent_tokenize(clean90s)
-sen00s = sent_tokenize(clean00s)
-sen10s = sent_tokenize(clean10s)
+wordsDecades = word_tokenize(cleanDecades)
 
 #for use in other classes
 #lyrics
@@ -100,6 +96,8 @@ def get00sLyrics():
     return clean00s
 def get10sLyrics():
     return clean10s
+def getDecadesLyrics():
+    return cleanDecades
 
 #words
 def get60sWords():
@@ -114,17 +112,5 @@ def get00sWords():
     return words00s
 def get10sWords():
     return words10s
-
-#sentences
-def get60sSen():
-    return sen60s
-def get70sSen():
-    return sen70s
-def get80sSen():
-    return sen80s
-def get90sSen():
-    return sen90s
-def get00sSen():
-    return words00s
-def get10sSen():
-    return sen10s
+def getDecadesWords():
+    return wordsDecades
