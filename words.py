@@ -1,14 +1,19 @@
 import pandas as pd
 import math
-from preprocess import *
 
-get60sLyrics()
-get70sLyrics()
-get80sLyrics()
-get90sLyrics()
-get00sLyrics()
-get10sLyrics()
-getDecadesLyrics()
+from preprocess import *
+from tfidf import *
+
+#import lyrics tokenized as words
+wordsEurovision = getEVWords()
+words60s = get60sWords()
+words70s = get70sWords()
+words80s = get80sWords()
+words90s = get90sWords()
+words00s = get00sWords()
+words10s = get10sWords()
+wordsDecades = getDecadesWords()
+dcTotal = getTotalCount()
 
 #create a dictionary of words and their occurence for each document
 def wordCount(data):
@@ -17,6 +22,8 @@ def wordCount(data):
         dictName[word] += 1
     return dictName
 
+#compute TF value for each set of lyrics
+#returns dictionary of TF values
 def computeTF(wordDict, bagOfWords):
     tfDict = {}
     bagOfWordsCount = len(bagOfWords)
@@ -24,11 +31,9 @@ def computeTF(wordDict, bagOfWords):
         tfDict[word] = count / float(bagOfWordsCount)
     return tfDict
 
-#returns dictionary of TF values
-#basic IDF with log
+#basic IDF formula
+#N = the number of documents from docCount
 def computeIDFBasic(documents):
-    N = len(documents)
-    
     idfDict = dict.fromkeys(documents[0].keys(), 0)
     for document in documents:
         for word, val in document.items():
@@ -36,14 +41,12 @@ def computeIDFBasic(documents):
                 idfDict[word] += 1
     
     for word, val in idfDict.items():
-        idfDict[word] = math.log(N / float(val))
+        idfDict[word] = math.log(dcTotal / float(val))
     return idfDict 
 
-
+#modified IDF with +1
+#N = the number of documents from docCount
 def computeIDFPlusOne(documents):
-    import math
-    N = len(documents)
-    
     idfDict = dict.fromkeys(documents[0].keys(), 0)
     for document in documents:
         for word, val in document.items():
@@ -51,9 +54,10 @@ def computeIDFPlusOne(documents):
                 idfDict[word] += 1
     
     for word, val in idfDict.items():
-        idfDict[word] = 1 + math.log(N / float(val))
+        idfDict[word] = 1 + math.log(dcTotal / float(val))
     return idfDict
 
+#compute TF-IDF value
 def computeTFIDF(tfData, idfs):
     tfidf = {}
     for word, val in tfData.items():
@@ -65,24 +69,17 @@ uniqueWords = set(wordsEurovision).union(set(words60s), set(words70s), set(words
 
 #word count
 wcEV = wordCount(wordsEurovision)
+wcDecades = wordCount(wordsDecades)
 wc60s = wordCount(words60s)
 wc70s = wordCount(words70s)
 wc80s = wordCount(words80s)
 wc90s = wordCount(words90s)
 wc00s = wordCount(words00s)
 wc10s = wordCount(words10s)
-wcDecades = wordCount(wordsDecades)
 
 #df of word frequency
-biGramCount = {'EV': wcEV, '60s': wc60s, '70s': wc70s, '80s': wc80s, '90s': wc90s, '00s': wc00s, '10s': wc10s, 'decades': wcDecades}
-dfBigramCount = pd.DataFrame(data=biGramCount)
-
-def getWordsFreqDF():
-    return dfBigramCount
-
-def getTop15Words(index):
-    top15Bigrams = dfBigramCount.nlargest(15, index)
-    return top15Bigrams.index.values
+wordCount = {'EV': wcEV, '60s': wc60s, '70s': wc70s, '80s': wc80s, '90s': wc90s, '00s': wc00s, '10s': wc10s, 'decades': wcDecades}
+dfWordCount = pd.DataFrame(data=wordCount)
 
 #TF values 
 tfEV = computeTF(wcEV, wordsEurovision)
@@ -117,7 +114,6 @@ dfBasic = pd.DataFrame(data=basicData)
 top15EVB = dfBasic.nlargest(15, 'EV')
 top15DecadesB = dfBasic.nlargest(15, 'decades')
 
-
 #tfidf with idf plus one
 tfidfPEV = computeTFIDF(tfEV, allIDFPlusOne)
 tfidfP60s = computeTFIDF(tf60s, allIDFPlusOne)
@@ -134,3 +130,20 @@ dfPlusOne = pd.DataFrame(data=plusOneData)
 #top 15 values sorted by Eurovision and Decades
 top15EVP = dfPlusOne.nlargest(15, 'EV')
 top15DecadesP = dfPlusOne.nlargest(15, 'decades')
+
+#for results summary
+def getWordsFreqDF():
+    return wordCount
+
+def getTop15Words(index):
+    top15Words = dfWordCount.nlargest(15, index)
+    return top15Words
+
+def exportWordsExcel():
+    with pd.ExcelWriter('wordsTFIDF.xlsx') as writer:  
+        top15Bigrams = getTop15Words
+        top15DecadesB.to_excel(writer, sheet_name='decades basic')
+        top15DecadesP.to_excel(writer, sheet_name='decades plus one')
+        top15EVB.to_excel(writer, sheet_name='eurovision basic')
+        top15EVP.to_excel(writer, sheet_name='eurovision plus one')
+        top15Bigrams.to_excel(writer, sheet_name='top 15 words')

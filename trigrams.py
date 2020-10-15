@@ -4,13 +4,15 @@ from words import wordCount, computeTF, computeIDFBasic, computeIDFPlusOne, comp
 from preprocess import *
 
 #import lyrics tokenized as words
-get60sWords()
-get70sWords()
-get80sWords()
-get90sWords()
-get00sWords()
-get10sWords()
-getDecadesLyrics()
+wordsEurovision = getEVWords()
+words60s = get60sWords()
+words70s = get70sWords()
+words80s = get80sWords()
+words90s = get90sWords()
+words00s = get00sWords()
+words10s = get10sWords()
+wordsDecades = getDecadesWords()
+dcTotal = getTotalCount()
 
 #trigrams for each lyrics set
 tgEV = list(nltk.trigrams(wordsEurovision))
@@ -45,13 +47,6 @@ tgcDecades = trigramCount(tgDecades)
 triGramCount = {'EV': tgcEV, '60s': tgc60s, '70s': tgc70s, '80s': tgc80s, '90s': tgc90s, '00s': tgc00s, '10s': tgc10s, 'decades': tgcDecades}
 dfTrigramCount = pd.DataFrame(data=triGramCount)
 
-def getTGFreqDF():
-    return dfTrigramCount
-
-def getTop15Trigrams(index):
-    top15Bigrams = dfTrigramCount.nlargest(15, index)
-    return top15Bigrams.index.values
-
 #TF values for bigrams
 tftgEV = computeTF(tgcEV, tgEV)
 tftg60s = computeTF(tgc60s, tg60s)
@@ -80,5 +75,20 @@ triGramData = {'EV': tfidfTrigramEV, '60s': tfidfTrigram60s, '70s': tfidfTrigram
 dfTrigram = pd.DataFrame(data=triGramData)
 
 #top 15 values sorted by Eurovision and Decades
-top15bgEV = dfTrigram.nlargest(15, 'EV')
-top15bgDecades = dfTrigram.nlargest(15, 'decades')
+top15tgEV = dfTrigram.nlargest(15, 'EV')
+top15tgDecades = dfTrigram.nlargest(15, 'decades')
+
+#for results summary
+def getTGFreqDF():
+    return dfTrigramCount
+
+def getTop15Trigrams(index):
+    top15Trigrams = dfTrigramCount.nlargest(15, index)
+    return top15Trigrams.index.values
+
+def exportTrigramsExcel():
+    top15Trigrams = getTop15Trigrams()
+    with pd.ExcelWriter('bigramsTFIDF.xlsx') as writer:  
+        top15tgEV.to_excel(writer, sheet_name='bigrams basic')
+        top15tgDecades.to_excel(writer, sheet_name='bigrams plus one')
+        top15Trigrams.to_excel(writer, sheet_name='top 15 trigrams')

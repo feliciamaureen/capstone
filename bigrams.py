@@ -4,13 +4,15 @@ from words import wordCount, computeTF, computeIDFBasic, computeIDFPlusOne, comp
 from preprocess import *
 
 #import lyrics tokenized as words
-get60sWords()
-get70sWords()
-get80sWords()
-get90sWords()
-get00sWords()
-get10sWords()
-getDecadesLyrics()
+wordsEurovision = getEVWords()
+words60s = get60sWords()
+words70s = get70sWords()
+words80s = get80sWords()
+words90s = get90sWords()
+words00s = get00sWords()
+words10s = get10sWords()
+wordsDecades = getDecadesWords()
+dcTotal = getTotalCount()
 
 #bigrams for each lyrics set
 bgEV = list(nltk.bigrams(wordsEurovision))
@@ -45,12 +47,6 @@ bgcDecades = bigramCount(bgDecades)
 biGramCount = {'EV': bgcEV, '60s': bgc60s, '70s': bgc70s, '80s': bgc80s, '90s': bgc90s, '00s': bgc00s, '10s': bgc10s, 'decades': bgcDecades}
 dfBigramCount = pd.DataFrame(data=biGramCount)
 
-def getBGFreqDF():
-    return dfBigramCount
-
-def getTop15Bigrams(index):
-    top15Bigrams = dfBigramCount.nlargest(15, index)
-    return top15Bigrams.index.values
 
 #TF values for bigrams
 tfbgEV = computeTF(bgcEV, bgEV)
@@ -83,3 +79,18 @@ dfBigram = pd.DataFrame(data=biGramData)
 top15bgEV = dfBigram.nlargest(15, 'EV')
 top15bgDecades = dfBigram.nlargest(15, 'decades')
 
+
+#for results summary
+def getBGFreqDF():
+    return dfBigramCount
+
+def getTop15Bigrams(index):
+    top15Bigrams = dfBigramCount.nlargest(15, index)
+    return top15Bigrams
+
+def exportBigramsExcel():
+    top15Bigrams = getTop15Bigrams()
+    with pd.ExcelWriter('bigramsTFIDF.xlsx') as writer:  
+        top15bgEV.to_excel(writer, sheet_name='bigrams basic')
+        top15bgDecades.to_excel(writer, sheet_name='bigrams plus one')
+        top15Bigrams.to_excel(writer, sheet_name='top 15 bigrams')

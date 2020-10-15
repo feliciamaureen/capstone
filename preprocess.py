@@ -6,7 +6,6 @@ import re
 
 from nltk.tokenize import word_tokenize
 from nltk.tokenize import sent_tokenize
-from contractions import expandContractions
 
 #lyric files
 eurovision = open("data/intersection.txt", "r")
@@ -17,6 +16,7 @@ c90s = open("data/1990s.txt", "r")
 c00s = open("data/2000s.txt", "r")
 c10s = open("data/2010s.txt", "r")
 
+#read lyric fules and store as variable
 eurovisionLyrics = eurovision.read()
 lyrics60s = c60s.read()
 lyrics70s = c70s.read()
@@ -25,6 +25,7 @@ lyrics90s = c90s.read()
 lyrics00s = c00s.read()
 lyrics10s = c10s.read()
 
+#close all text files
 eurovision.close()
 c60s.close()
 c70s.close()
@@ -53,14 +54,25 @@ def removeNumbers(text):
     text = "".join(i for i in text if not i.isdigit())
     return text
 
+#apply all cleaning functions to data
 def cleanText(data):
     data = convLower(data)
-    data = expandContractions(data)
     data = removePunctuation(data)
     data = removeNonAlphabet(data)
     data = removeNumbers(data)
     data = removePunctuation(data)
     return data
+
+#count how many documents are in the text file, marked by '-----'
+#dcEV = eurovisionLyrics.count('-----')
+dc60s = lyrics60s.count('-----')
+dc70s = lyrics70s.count('-----')
+dc80s = lyrics80s.count('-----')
+dc90s = lyrics90s.count('-----')
+dc00s = lyrics00s.count('-----')
+dc10s = lyrics10s.count('-----')
+dcTotal = dc60s + dc70s + dc80s + dc90s + dc00s + dc10s #currently missing ev
+#dcTotal = dcEV + dc60s + dc70s + dc80s + dc90s + dc00s + dc10s #currently missing ev
 
 #clean lyrics
 cleanEV = cleanText(eurovisionLyrics)
@@ -84,6 +96,8 @@ wordsDecades = word_tokenize(cleanDecades)
 
 #for use in other classes
 #lyrics
+def getEVLyrics():
+    return cleanEV
 def get60sLyrics():
     return clean60s
 def get70sLyrics():
@@ -100,6 +114,8 @@ def getDecadesLyrics():
     return cleanDecades
 
 #words
+def getEVWords():
+    return wordsEurovision
 def get60sWords():
     return words60s
 def get70sWords():
@@ -114,3 +130,22 @@ def get10sWords():
     return words10s
 def getDecadesWords():
     return wordsDecades
+
+#document count
+def getEVCount():
+    return dcEV
+def get60sCount():
+    return dc60s
+def get70sCount():
+    return dc60s
+def get80sCount():
+    return dc60s
+def get90sCount():
+    return dc60s
+def get00sCount():
+    return dc60s
+def get10sCount():
+    return dc60s
+def getTotalCount():
+    return dcTotal
+
