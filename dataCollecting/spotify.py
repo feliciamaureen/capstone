@@ -1,13 +1,28 @@
+"""
+Gather chart data with Spotify API
+
+This script is used to obtain chart data from Spotify playlists.
+
+This script requires that 'pandas', 'requests', 'spotipy', and 'spotipy.oauth2' be installed within the Python environment you are running this script in.
+It also requires a Spotify token that can be obtained from Spotify (https://developer.spotify.com/documentation/general/guides/authorization-guide/)
+
+This file can also be imported as a module and contains the following
+functions: 
+- getTrackIDs: get the track IDs within a certain playlists
+- getTrackFeatures: get all the information for each song in the playlists
+"""
+
 import requests
 import spotipy
 import pandas as pd
-import time
 from spotipy.oauth2 import SpotifyClientCredentials
 
 from init import spotifyAccess
 
+#get spotify access token
 sp = spotifyAccess()
 
+#get list of track ID to retrieve data from playlist
 def getTrackIDs(user, playlist_id):
     ids = []
     playlist = sp.user_playlist(user, playlist_id)
@@ -16,11 +31,12 @@ def getTrackIDs(user, playlist_id):
         ids.append(track['id'])
     return ids
 
+#get track
 def getTrackFeatures(id):
     meta = sp.track(id)
     features = sp.audio_features(id)
 
-    # meta
+    #metadata
     name = meta['name']
     album = meta['album']['name']
     artist = meta['album']['artists'][0]['name']
@@ -28,7 +44,7 @@ def getTrackFeatures(id):
     length = meta['duration_ms']
     popularity = meta['popularity']
 
-    # features
+    #features
     acousticness = features[0]['acousticness']
     danceability = features[0]['danceability']
     energy = features[0]['energy']
@@ -42,6 +58,7 @@ def getTrackFeatures(id):
     track = [name, album, artist, release_date, length, popularity, danceability, acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, tempo, time_signature]
     return track
 
+#list of spotify URIs: accessed 1 sept 2020
 #60s = spotify:playlist:37i9dQZF1DXaKIA8E7WcJj
 #70s = spotify:playlist:37i9dQZF1DWTJ7xPn4vNaz
 #80s = spotify:playlist:37i9dQZF1DX4UtSsGT1Sbe 
@@ -49,17 +66,18 @@ def getTrackFeatures(id):
 #00s = spotify:playlist:37i9dQZF1DX4o1oenSJRJd
 #10s = spotify:playlist:37i9dQZF1DX5Ejj0EkURtP
 
+#get each track information and based on their ID from a playlist specified by the URI
 ids = getTrackIDs('Spotify', '37i9dQZF1DX5Ejj0EkURtP')
 
 tracks = []
 for i in range(len(ids)):
-        #time.sleep(.5)
     track = getTrackFeatures(ids[i])
     tracks.append(track)
 
-
+#make dataframe with all obtained song information
 df = pd.DataFrame(tracks, columns = ['name', 'album', 'artist', 'release_date', 'length', 'popularity', 'danceability', 'acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'loudness', 'speechiness', 'tempo', 'time_signature'])
 fileName = '2010s' + ".csv"
+#export dataframe to csv
 df.to_csv(fileName, sep = ',')
 
 
