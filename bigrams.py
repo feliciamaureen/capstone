@@ -1,3 +1,21 @@
+"""
+Bigram Processing
+
+This script is used to make bigrams from the tokenized text and used to apply TF-IDF to the bigrams 
+as well as get the top 15 bigrams in the documents
+
+This script requires that 'pandas' and 'nltk' be installed within the Python environment you are running this script in.
+and the classess words.py to get the tokenized words and preprocess.py to call the TF-IDF functions
+
+This file can also be imported as a module and contains the following
+functions: 
+- bigramCount: count how many times a bigram occurs in the text
+- getBGFreqDF: gets the dataframe containing bigram frequency
+- getTop15Bigrams: gets the top 15 bigrams by an index
+- exportBigramsExcel: export all the results to excel
+- exportBigramsFreqExcel: exports all the the top 15 bigram frequency results to excel
+
+"""
 import nltk
 import pandas as pd
 from words import wordCount, computeTF, computeIDFBasic, computeIDFPlusOne, computeTFIDF
@@ -60,8 +78,10 @@ tfbgDecades = computeTF(bgcDecades, bgDecades)
 
 #basic IDF value for bigrams
 bgIDF = computeIDFBasic([bgcEV, bgc60s, bgc70s, bgc80s, bgc90s, bgc00s, bgc10s, bgcDecades])
+#IDF with plus one (basic idf, 1 + log)
+bgIDFPlusOne = computeIDFPlusOne([bgcEV, bgc60s, bgc70s, bgc80s, bgc90s, bgc00s, bgc10s, bgcDecades])
 
-#tfidf values
+#basic tfidf values
 tfidfBigramEV = computeTFIDF(tfbgEV, bgIDF)
 tfidfBigram60s = computeTFIDF(tfbg60s, bgIDF)
 tfidfBigram70s = computeTFIDF(tfbg70s, bgIDF)
@@ -72,12 +92,42 @@ tfidfBigram10s = computeTFIDF(tfbg10s, bgIDF)
 tfidfBigramDecades = computeTFIDF(tfbgDecades, bgIDF)
 
 #summarise results in dataframe
-biGramData = {'EV': tfidfBigramEV, '60s': tfidfBigram60s, '70s': tfidfBigram70s, '80s': tfidfBigram80s, '90s': tfidfBigram90s, '00s': tfidfBigram00s, '10s': tfidfBigram10s, 'decades': tfidfBigramDecades}
-dfBigram = pd.DataFrame(data=biGramData)
+biGramDataB = {'EV': tfidfBigramEV, '60s': tfidfBigram60s, '70s': tfidfBigram70s, '80s': tfidfBigram80s, '90s': tfidfBigram90s, '00s': tfidfBigram00s, '10s': tfidfBigram10s, 'decades': tfidfBigramDecades}
+dfBigramB = pd.DataFrame(data=biGramDataB)
 
-#top 15 values sorted by Eurovision and Decades
-top15bgEV = dfBigram.nlargest(15, 'EV')
-top15bgDecades = dfBigram.nlargest(15, 'decades')
+#top 15 values sorted by columns
+top15bgEVB = dfBigramB.nlargest(15, 'EV')
+top15bgDecadesB = dfBigramB.nlargest(15, 'decades')
+top15bg60sB = dfBigramB.nlargest(15, '60s')
+top15bg70sB = dfBigramB.nlargest(15, '70s')
+top15bg80sB = dfBigramB.nlargest(15, '80s')
+top15bg90sB = dfBigramB.nlargest(15, '90s')
+top15bg00sB = dfBigramB.nlargest(15, '00s')
+top15bg10sB = dfBigramB.nlargest(15, '10s')
+
+#tfidf with idf plus one
+tfidfBigramEVP = computeTFIDF(tfbgEV, bgIDFPlusOne)
+tfidfBigram60sP = computeTFIDF(tfbg60s, bgIDFPlusOne)
+tfidfBigram70sP = computeTFIDF(tfbg70s, bgIDFPlusOne)
+tfidfBigram80sP = computeTFIDF(tfbg80s, bgIDFPlusOne)
+tfidfBigram90sP = computeTFIDF(tfbg90s, bgIDFPlusOne)
+tfidfBigram00sP = computeTFIDF(tfbg00s, bgIDFPlusOne)
+tfidfBigram10sP = computeTFIDF(tfbg10s, bgIDFPlusOne)
+tfidfBigramDecadesP = computeTFIDF(tfbgDecades, bgIDFPlusOne)
+
+#summarise plus one results in dataframe
+bigramDataP = {'EV': tfidfBigramEVP, '60s': tfidfBigram60sP, '70s': tfidfBigram70sP, '80s': tfidfBigram80sP, '90s': tfidfBigram90sP, '00s': tfidfBigram00sP, '10s': tfidfBigram10sP, 'decades': tfidfBigramDecadesP}
+dfBigramP = pd.DataFrame(data=bigramDataP)
+
+#top 15 values sorted by columns
+top15bgEVP = dfBigramP.nlargest(15, 'EV')
+top15bgDecadesP = dfBigramP.nlargest(15, 'decades')
+top15bg60sP = dfBigramP.nlargest(15, '60s')
+top15bg70sP = dfBigramP.nlargest(15, '70s')
+top15bg80sP = dfBigramP.nlargest(15, '80s')
+top15bg90sP = dfBigramP.nlargest(15, '90s')
+top15bg00sP = dfBigramP.nlargest(15, '00s')
+top15bg10sP = dfBigramP.nlargest(15, '10s')
 
 
 #for results summary
@@ -89,8 +139,34 @@ def getTop15Bigrams(index):
     return top15Bigrams
 
 def exportBigramsExcel():
-    top15Bigrams = getTop15Bigrams()
     with pd.ExcelWriter('bigramsTFIDF.xlsx') as writer:  
-        top15bgEV.to_excel(writer, sheet_name='bigrams basic')
-        top15bgDecades.to_excel(writer, sheet_name='bigrams plus one')
-        top15Bigrams.to_excel(writer, sheet_name='top 15 bigrams')
+        top15bgEVB.to_excel(writer, sheet_name='bigrams eurovision basic')
+        top15bgDecadesB.to_excel(writer, sheet_name='bigrams decades basic ')
+        top15bg60sB.to_excel(writer, sheet_name='bigrams basic 60s')
+        top15bg70sB.to_excel(writer, sheet_name='bigrams basic 70s')
+        top15bg80sB.to_excel(writer, sheet_name='bigrams basic 80s')
+        top15bg90sB.to_excel(writer, sheet_name='bigrams basic 90s')
+        top15bg00sB.to_excel(writer, sheet_name='bigrams basic 00s')
+        top15bg10sB.to_excel(writer, sheet_name='bigrams basic 10s')
+
+        top15bgEVP.to_excel(writer, sheet_name='bigrams eurovision plus one')
+        top15bgDecadesP.to_excel(writer, sheet_name='bigrams decades plus one ')
+        top15bg60sP.to_excel(writer, sheet_name='bigrams plus one 60s')
+        top15bg70sP.to_excel(writer, sheet_name='bigrams plus one 70s')
+        top15bg80sP.to_excel(writer, sheet_name='bigrams plus one 80s')
+        top15bg90sP.to_excel(writer, sheet_name='bigrams plus one 90s')
+        top15bg00sP.to_excel(writer, sheet_name='bigrams plus one 00s')
+        top15bg10sP.to_excel(writer, sheet_name='bigrams plus one 10s')
+
+def exportBigramsFreqExcel():
+    with pd.ExcelWriter('bgFrequency.xlsx') as writer:  
+        getTop15Bigrams('EV').to_excel(writer, sheet_name='eurovision')
+        getTop15Bigrams('decades').to_excel(writer, sheet_name='decades')
+        getTop15Bigrams('60s').to_excel(writer, sheet_name='60s')
+        getTop15Bigrams('70s').to_excel(writer, sheet_name='70s')
+        getTop15Bigrams('80s').to_excel(writer, sheet_name='80s')
+        getTop15Bigrams('90s').to_excel(writer, sheet_name='90s')
+        getTop15Bigrams('00s').to_excel(writer, sheet_name='00s')
+        getTop15Bigrams('10s').to_excel(writer, sheet_name='10s')
+
+       

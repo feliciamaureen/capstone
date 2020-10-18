@@ -1,8 +1,28 @@
+"""
+Word Processing
+
+This script is used to calculate the TF-IDF and frequency values for the tokenized words
+
+This script requires that 'pandas' and 'math' be installed within the Python environment you are running this script in.
+and the class preprocess.py to get the tokenized words
+
+This file can also be imported as a module and contains the following
+functions: 
+- wordCount: count the number of times a word occurs 
+- computeTF: calculates term frequency
+- computeIDFBasic: calculates inverse document frequency with the basic formula(math.log(dcTotal / float(val)))
+- computeIDFPlusOne: calculates inverse document frequency with the modified formula (1 + math.log(dcTotal / float(val)))
+- computeTFIDF: computes TF-IDF values
+- getWordsFreqDF: gets dataframe of word frequencies
+- getTop15Words: gets the top 15 words by index
+- exportWordsExcel: exports all the TF-IDF results to excel
+- exportWordsFreqExcel: exports all the top 15 word frequency results to excel
+"""
+
 import pandas as pd
 import math
 
 from preprocess import *
-from tfidf import *
 
 #import lyrics tokenized as words
 wordsEurovision = getEVWords()
@@ -113,6 +133,12 @@ dfBasic = pd.DataFrame(data=basicData)
 #top 15 values sorted by Eurovision and Decades
 top15EVB = dfBasic.nlargest(15, 'EV')
 top15DecadesB = dfBasic.nlargest(15, 'decades')
+top1560sB = dfBasic.nlargest(15, '60s')
+top1570sB = dfBasic.nlargest(15, '70s')
+top1580sB = dfBasic.nlargest(15, '80s')
+top1590sB = dfBasic.nlargest(15, '90s')
+top1500sB = dfBasic.nlargest(15, '00s')
+top1510sB = dfBasic.nlargest(15, '10s')
 
 #tfidf with idf plus one
 tfidfPEV = computeTFIDF(tfEV, allIDFPlusOne)
@@ -124,12 +150,19 @@ tfidfP00s = computeTFIDF(tf00s, allIDFPlusOne)
 tfidfP10s = computeTFIDF(tf10s, allIDFPlusOne)
 tfidfPDecades = computeTFIDF(tfDecades, allIDFPlusOne)
 
+#summarise results in dataframe
 plusOneData = {'EV': tfidfPEV, '60s': tfidfP60s, '70s': tfidfP70s, '80s': tfidfP80s, '90s': tfidfP90s, '00s': tfidfP00s, '10s': tfidfP10s, 'decades': tfidfPDecades}
 dfPlusOne = pd.DataFrame(data=plusOneData)
 
 #top 15 values sorted by Eurovision and Decades
 top15EVP = dfPlusOne.nlargest(15, 'EV')
 top15DecadesP = dfPlusOne.nlargest(15, 'decades')
+top1560sP = dfPlusOne.nlargest(15, '60s')
+top1570sP = dfPlusOne.nlargest(15, '70s')
+top1580sP = dfPlusOne.nlargest(15, '80s')
+top1590sP = dfPlusOne.nlargest(15, '90s')
+top1500sP = dfPlusOne.nlargest(15, '00s')
+top1510sP = dfPlusOne.nlargest(15, '10s')
 
 #for results summary
 def getWordsFreqDF():
@@ -141,9 +174,31 @@ def getTop15Words(index):
 
 def exportWordsExcel():
     with pd.ExcelWriter('wordsTFIDF.xlsx') as writer:  
-        top15Bigrams = getTop15Words
         top15DecadesB.to_excel(writer, sheet_name='decades basic')
-        top15DecadesP.to_excel(writer, sheet_name='decades plus one')
         top15EVB.to_excel(writer, sheet_name='eurovision basic')
+        top1560sB.to_excel(writer, sheet_name='basic 60s')
+        top1570sB.to_excel(writer, sheet_name='basic 70s')
+        top1580sB.to_excel(writer, sheet_name='basic 80s')
+        top1590sB.to_excel(writer, sheet_name='basic 90s')
+        top1500sB.to_excel(writer, sheet_name='basic 00s')
+        top1510sB.to_excel(writer, sheet_name='basic 10s')
+
+        top15DecadesP.to_excel(writer, sheet_name='decades plus one')
         top15EVP.to_excel(writer, sheet_name='eurovision plus one')
-        top15Bigrams.to_excel(writer, sheet_name='top 15 words')
+        top1560sP.to_excel(writer, sheet_name='plus one 60s')
+        top1570sP.to_excel(writer, sheet_name='plus one 70s')
+        top1580sP.to_excel(writer, sheet_name='plus one 80s')
+        top1590sP.to_excel(writer, sheet_name='plus one 90s')
+        top1500sP.to_excel(writer, sheet_name='plus one 00s')
+        top1510sP.to_excel(writer, sheet_name='plus one 10s')
+
+def exportWordsFreqExcel():
+    with pd.ExcelWriter('wordFrequency.xlsx') as writer:  
+        getTop15Words('EV').to_excel(writer, sheet_name='eurovision')
+        getTop15Words('decades').to_excel(writer, sheet_name='decades')
+        getTop15Words('60s').to_excel(writer, sheet_name='60s')
+        getTop15Words('70s').to_excel(writer, sheet_name='70s')
+        getTop15Words('80s').to_excel(writer, sheet_name='80s')
+        getTop15Words('90s').to_excel(writer, sheet_name='90s')
+        getTop15Words('00s').to_excel(writer, sheet_name='00s')
+        getTop15Words('10s').to_excel(writer, sheet_name='10s')

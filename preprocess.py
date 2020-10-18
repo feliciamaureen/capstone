@@ -1,3 +1,42 @@
+"""
+Data Preprocessing
+
+This script is used to clean and prepare the collected data before using it for analysis. 
+It takes txt files containing the lyrics and a csv file of metadata of the Eurovision songs.
+
+This script requires that 'pandas', 'numpy', 'nltk', 'string', and 're'  be installed within the Python
+environment you are running this script in.
+
+This file can also be imported as a module and contains the following
+functions: 
+- convLower: converts all text to lower case
+- removePunctuation: removes punctuation from text
+- removeNumbers: removes numbers from text
+- wordSplit: split a word into a list containing its characters
+- removeConcat: removes apostrophes from contractions
+- cleanText: calls all the methods above to apply all of them to the data
+- findArtist: find artist in intersection.txt to count the number of songs
+
+get functions for the list of tokenized words: to use in other classes that need the tokenized text
+- getEVWords()
+- get60sWords()
+- get70sWords()
+- get80sWords()
+- get90sWords()
+- get00sWords()
+- get10sWords()
+- getDecadesWords()
+
+get functions for document count: to use in other classes that need the document count
+- getEVCount()
+- get60sCount()
+- get70sCount()
+- get80sCount()
+- get90sCount()
+- get00sCount()
+- get10sCount()
+- getTotalCount()
+"""
 import pandas as pd
 import numpy as np
 import nltk
@@ -8,13 +47,13 @@ from nltk.tokenize import word_tokenize
 from nltk.tokenize import sent_tokenize
 
 #lyric files
-eurovision = open("data/intersection.txt", "r")
-c60s = open("data/1960s.txt", "r")
-c70s = open("data/1970s.txt", "r")
-c80s = open("data/1980s.txt", "r")
-c90s = open("data/1990s.txt", "r")
-c00s = open("data/2000s.txt", "r")
-c10s = open("data/2010s.txt", "r")
+eurovision = open("data/intersection.txt", "r", encoding='utf-8')
+c60s = open("data/1960s.txt", "r", encoding ='utf-8')
+c70s = open("data/1970s.txt", "r", encoding ='utf-8')
+c80s = open("data/1980s.txt", "r", encoding ='utf-8')
+c90s = open("data/1990s.txt", "r", encoding ='utf-8')
+c00s = open("data/2000s.txt", "r", encoding ='utf-8')
+c10s = open("data/2010s.txt", "r", encoding ='utf-8')
 
 #read lyric fules and store as variable
 eurovisionLyrics = eurovision.read()
@@ -54,14 +93,56 @@ def removeNumbers(text):
     text = "".join(i for i in text if not i.isdigit())
     return text
 
-#apply all cleaning functions to data
+#split words into a list of its characters
+def wordSplit(word): 
+    return [char for char in word]  
+
+#removes apostrophes in contractions
+def removeConcat(text):
+    strList = text.split()
+    #splits string into words
+    for i in range(len(strList)):
+        #if a word has an apostrophe, split remove and concat
+        if "'" in strList[i]:
+            splitWord = wordSplit(strList[i])
+            splitWord.remove("'")
+            strList[i] = "".join(splitWord)
+            
+        #join string together 
+        text = " ".join(strList)
+        return text
+
+#apply all functions to data
 def cleanText(data):
     data = convLower(data)
     data = removePunctuation(data)
     data = removeNonAlphabet(data)
     data = removeNumbers(data)
-    data = removePunctuation(data)
+    data = removeConcat(data)
     return data
+
+#find artists in intersection.txt
+def findArtist(artistName):
+    with open("data/intersection.txt") as f:
+        if artistName in f.read():
+            return True
+
+#read csv file of Eurovision songs metadata, store in dataframe
+evMeta = pd.read_csv('data/EVmetadata.csv') 
+evArtists = evMeta['Unnamed: 3']
+evArtistList = evArtists.tolist()
+
+#get column of artist names
+evArtists = evMeta['Unnamed: 3']
+evArtistList = evArtists.tolist()
+
+#count how many artists are found in intersection.txt 
+#to count how many songs are in the document
+dcEV = 0
+for i in range(len(evArtistList)):
+    artistName = str(evArtistList[i])
+    if findArtist(artistName) is True:
+        dcEV = dcEV + 1 
 
 #count how many documents are in the text file, marked by '-----'
 #dcEV = eurovisionLyrics.count('-----')
@@ -71,8 +152,7 @@ dc80s = lyrics80s.count('-----')
 dc90s = lyrics90s.count('-----')
 dc00s = lyrics00s.count('-----')
 dc10s = lyrics10s.count('-----')
-dcTotal = dc60s + dc70s + dc80s + dc90s + dc00s + dc10s #currently missing ev
-#dcTotal = dcEV + dc60s + dc70s + dc80s + dc90s + dc00s + dc10s #currently missing ev
+dcTotal = dcEV + dc60s + dc70s + dc80s + dc90s + dc00s + dc10s 
 
 #clean lyrics
 cleanEV = cleanText(eurovisionLyrics)
@@ -95,24 +175,6 @@ words10s = word_tokenize(clean10s)
 wordsDecades = word_tokenize(cleanDecades)
 
 #for use in other classes
-#lyrics
-def getEVLyrics():
-    return cleanEV
-def get60sLyrics():
-    return clean60s
-def get70sLyrics():
-    return clean70s
-def get80sLyrics():
-    return clean90s
-def get90sLyrics():
-    return clean90s
-def get00sLyrics():
-    return clean00s
-def get10sLyrics():
-    return clean10s
-def getDecadesLyrics():
-    return cleanDecades
-
 #words
 def getEVWords():
     return wordsEurovision
