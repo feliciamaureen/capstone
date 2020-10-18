@@ -7,4 +7,5 @@ This repository contains scripts to gather lyric and chart as well as to clean a
 - Python 3
 - NLTK 3.5
 - Pandas 1.1.3
-
+- Spotipy
+- lyricsgenius
