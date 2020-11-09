@@ -12,8 +12,8 @@ functions:
 - trigramCount: count how many times a trigram occurs in the text
 - getTGFreqDF: gets the dataframe containing trigram frequency
 - getTop15Bigrams: gets the top 15 trigrams by an index
-- exportTrigramsExcel: export all the TF-IDF results  results to excel
-- exportTrigramsFreqExcel: exports all the the top 15  trigram frequency results to excel
+- exportTrigramsExcel: export all results  results to excel
+
 """
 
 import nltk
@@ -136,33 +136,42 @@ def getTop15Trigrams(index):
     top15Trigrams = dfTrigramCount.nlargest(15, index)
     return top15Trigrams
 
+#top 15 trigrams in each category based on frequency
+dFreq = {'EV': getTop15Trigrams('EV').index.values.tolist(), 
+         '60s': getTop15Trigrams('60s').index.values.tolist(), 
+         '70s': getTop15Trigrams('70s').index.values.tolist(), 
+         '80s': getTop15Trigrams('80s').index.values.tolist(), 
+         '90s': getTop15Trigrams('90s').index.values.tolist(),
+         '00s': getTop15Trigrams('00s').index.values.tolist(), 
+         '10s': getTop15Trigrams('10s').index.values.tolist(), 
+         'decades': getTop15Trigrams('decades').index.values.tolist()}
+top15TrigramsResults = pd.DataFrame(data=dFreq)
+
+#top 15 trigrams in each category based on TF-IDF Basic
+dTFIDFb = {'EV': top15tgEVB.index.values.tolist(), 
+         '60s': top15tg60sB.index.values.tolist(), 
+         '70s': top15tg70sB.index.values.tolist(), 
+         '80s': top15tg80sB.index.values.tolist(), 
+         '90s': top15tg90sB.index.values.tolist(),
+         '00s': top15tg00sB.index.values.tolist(), 
+         '10s': top15tg10sB.index.values.tolist(), 
+         'decades': top15tg10sB.index.values.tolist()}
+top15TFIDFBResults = pd.DataFrame(data=dTFIDFb)
+
+#top 15 trigrams in each category based on TF-IDF Plus One
+dTFIDFp = {'EV': top15tgEVP.index.values.tolist(), 
+         '60s': top15tg60sP.index.values.tolist(), 
+         '70s': top15tg70sP.index.values.tolist(), 
+         '80s': top15tg80sP.index.values.tolist(), 
+         '90s': top15tg90sP.index.values.tolist(),
+         '00s': top15tg00sP.index.values.tolist(), 
+         '10s': top15tg10sP.index.values.tolist(), 
+         'decades': top15tgDecadesP.index.values.tolist()}
+top15TFIDFPResults = pd.DataFrame(data=dTFIDFp)
+
+#export all results to excel
 def exportTrigramsExcel():
     with pd.ExcelWriter('trigramsTFIDF.xlsx') as writer:  
-        top15tgEVB.to_excel(writer, sheet_name='trigrams eurovision basic')
-        top15tgDecadesB.to_excel(writer, sheet_name='trigrams decades basic ')
-        top15tg60sB.to_excel(writer, sheet_name='trigrams basic 60s')
-        top15tg70sB.to_excel(writer, sheet_name='trigrams basic 70s')
-        top15tg80sB.to_excel(writer, sheet_name='trigrams basic 80s')
-        top15tg90sB.to_excel(writer, sheet_name='trigrams basic 90s')
-        top15tg00sB.to_excel(writer, sheet_name='trigrams basic 00s')
-        top15tg10sB.to_excel(writer, sheet_name='trigrams basic 10s')
-
-        top15tgEVP.to_excel(writer, sheet_name='trigrams eurovision plus one')
-        top15tgDecadesP.to_excel(writer, sheet_name='trigrams decades plus one ')
-        top15tg60sP.to_excel(writer, sheet_name='trigrams plus one 60s')
-        top15tg70sP.to_excel(writer, sheet_name='trigrams plus one 70s')
-        top15tg80sP.to_excel(writer, sheet_name='trigrams plus one 80s')
-        top15tg90sP.to_excel(writer, sheet_name='trigrams plus one 90s')
-        top15tg00sP.to_excel(writer, sheet_name='trigrams plus one 00s')
-        top15tg10sP.to_excel(writer, sheet_name='trigrams plus one 10s')
-
-def exportTrigramsFreqExcel():
-    with pd.ExcelWriter('tgFrequency.xlsx') as writer:  
-        getTop15Trigrams('EV').to_excel(writer, sheet_name='eurovision')
-        getTop15Trigrams('decades').to_excel(writer, sheet_name='decades')
-        getTop15Trigrams('60s').to_excel(writer, sheet_name='60s')
-        getTop15Trigrams('70s').to_excel(writer, sheet_name='70s')
-        getTop15Trigrams('80s').to_excel(writer, sheet_name='80s')
-        getTop15Trigrams('90s').to_excel(writer, sheet_name='90s')
-        getTop15Trigrams('00s').to_excel(writer, sheet_name='00s')
-        getTop15Trigrams('10s').to_excel(writer, sheet_name='10s')
+        top15TrigramsResults.to_excel(writer, sheet_name='Trigram Frequency')
+        top15TFIDFBResults.to_excel(writer, sheet_name='TF-IDF Basic')
+        top15TFIDFPResults.to_excel(writer, sheet_name='TF-IDF Plus One')

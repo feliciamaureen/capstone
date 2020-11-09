@@ -15,8 +15,7 @@ functions:
 - computeTFIDF: computes TF-IDF values
 - getWordsFreqDF: gets dataframe of word frequencies
 - getTop15Words: gets the top 15 words by index
-- exportWordsExcel: exports all the TF-IDF results to excel
-- exportWordsFreqExcel: exports all the top 15 word frequency results to excel
+- exportWordsExcel: exports all results to excel
 """
 
 import pandas as pd
@@ -172,33 +171,43 @@ def getTop15Words(index):
     top15Words = dfWordCount.nlargest(15, index)
     return top15Words
 
+#top 15 words in each category based on frequency
+dFreq = {'EV': getTop15Words('EV').index.values.tolist(), 
+         '60s': getTop15Words('60s').index.values.tolist(), 
+         '70s': getTop15Words('70s').index.values.tolist(), 
+         '80s': getTop15Words('80s').index.values.tolist(), 
+         '90s': getTop15Words('90s').index.values.tolist(),
+         '00s': getTop15Words('00s').index.values.tolist(), 
+         '10s': getTop15Words('10s').index.values.tolist(), 
+         'decades': getTop15Words('decades').index.values.tolist()}
+top15WordsResults = pd.DataFrame(data=dFreq)
+
+#top 15 words in each category based on TF-IDF Basic
+dTFIDFb = {'EV': top15EVB.index.values.tolist(), 
+         '60s': top1560sB.index.values.tolist(), 
+         '70s': top1570sB.index.values.tolist(), 
+         '80s': top1580sB.index.values.tolist(), 
+         '90s': top1590sB.index.values.tolist(),
+         '00s': top1500sB.index.values.tolist(), 
+         '10s': top1510sB.index.values.tolist(), 
+         'decades': top15DecadesB.index.values.tolist()}
+top15TFIDFBResults = pd.DataFrame(data=dTFIDFb)
+
+#top 15 words in each category based on TF-IDF Plus One
+dTFIDFp = {'EV': top15EVP.index.values.tolist(), 
+         '60s': top1560sP.index.values.tolist(), 
+         '70s': top1570sP.index.values.tolist(), 
+         '80s': top1580sP.index.values.tolist(), 
+         '90s': top1590sP.index.values.tolist(),
+         '00s': top1500sP.index.values.tolist(), 
+         '10s': top1510sP.index.values.tolist(), 
+         'decades': top15DecadesP.index.values.tolist()}
+top15TFIDFPResults = pd.DataFrame(data=dTFIDFp)
+
+#export all results to excel
 def exportWordsExcel():
     with pd.ExcelWriter('wordsTFIDF.xlsx') as writer:  
-        top15DecadesB.to_excel(writer, sheet_name='decades basic')
-        top15EVB.to_excel(writer, sheet_name='eurovision basic')
-        top1560sB.to_excel(writer, sheet_name='basic 60s')
-        top1570sB.to_excel(writer, sheet_name='basic 70s')
-        top1580sB.to_excel(writer, sheet_name='basic 80s')
-        top1590sB.to_excel(writer, sheet_name='basic 90s')
-        top1500sB.to_excel(writer, sheet_name='basic 00s')
-        top1510sB.to_excel(writer, sheet_name='basic 10s')
-
-        top15DecadesP.to_excel(writer, sheet_name='decades plus one')
-        top15EVP.to_excel(writer, sheet_name='eurovision plus one')
-        top1560sP.to_excel(writer, sheet_name='plus one 60s')
-        top1570sP.to_excel(writer, sheet_name='plus one 70s')
-        top1580sP.to_excel(writer, sheet_name='plus one 80s')
-        top1590sP.to_excel(writer, sheet_name='plus one 90s')
-        top1500sP.to_excel(writer, sheet_name='plus one 00s')
-        top1510sP.to_excel(writer, sheet_name='plus one 10s')
-
-def exportWordsFreqExcel():
-    with pd.ExcelWriter('wordFrequency.xlsx') as writer:  
-        getTop15Words('EV').to_excel(writer, sheet_name='eurovision')
-        getTop15Words('decades').to_excel(writer, sheet_name='decades')
-        getTop15Words('60s').to_excel(writer, sheet_name='60s')
-        getTop15Words('70s').to_excel(writer, sheet_name='70s')
-        getTop15Words('80s').to_excel(writer, sheet_name='80s')
-        getTop15Words('90s').to_excel(writer, sheet_name='90s')
-        getTop15Words('00s').to_excel(writer, sheet_name='00s')
-        getTop15Words('10s').to_excel(writer, sheet_name='10s')
+        top15WordsResults.to_excel(writer, sheet_name='Word Frequency')
+        top15TFIDFBResults.to_excel(writer, sheet_name='TF-IDF Basic')
+        top15TFIDFPResults.to_excel(writer, sheet_name='TF-IDF Plus One')
+        

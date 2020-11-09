@@ -12,9 +12,7 @@ functions:
 - bigramCount: count how many times a bigram occurs in the text
 - getBGFreqDF: gets the dataframe containing bigram frequency
 - getTop15Bigrams: gets the top 15 bigrams by an index
-- exportBigramsExcel: export all the results to excel
-- exportBigramsFreqExcel: exports all the the top 15 bigram frequency results to excel
-
+- exportBigramsExcel: export all results to excel
 """
 import nltk
 import pandas as pd
@@ -138,35 +136,42 @@ def getTop15Bigrams(index):
     top15Bigrams = dfBigramCount.nlargest(15, index)
     return top15Bigrams
 
+#top 15 bigrams in each category based on frequency
+dFreq = {'EV': getTop15Bigrams('EV').index.values.tolist(), 
+         '60s': getTop15Bigrams('60s').index.values.tolist(), 
+         '70s': getTop15Bigrams('70s').index.values.tolist(), 
+         '80s': getTop15Bigrams('80s').index.values.tolist(), 
+         '90s': getTop15Bigrams('90s').index.values.tolist(),
+         '00s': getTop15Bigrams('00s').index.values.tolist(), 
+         '10s': getTop15Bigrams('10s').index.values.tolist(), 
+         'decades': getTop15Bigrams('decades').index.values.tolist()}
+top15BigramsResults = pd.DataFrame(data=dFreq)
+
+#top 15 bigrams in each category based on TF-IDF Basic
+dTFIDFb = {'EV': top15bgEVB.index.values.tolist(), 
+         '60s': top15bg60sB.index.values.tolist(), 
+         '70s': top15bg70sB.index.values.tolist(), 
+         '80s': top15bg80sB.index.values.tolist(), 
+         '90s': top15bg90sB.index.values.tolist(),
+         '00s': top15bg00sB.index.values.tolist(), 
+         '10s': top15bg10sB.index.values.tolist(), 
+         'decades': top15bg10sB.index.values.tolist()}
+top15TFIDFBResults = pd.DataFrame(data=dTFIDFb)
+
+#top 15 wobigramsrds in each category based on TF-IDF Plus One
+dTFIDFp = {'EV': top15bgEVP.index.values.tolist(), 
+         '60s': top15bg60sP.index.values.tolist(), 
+         '70s': top15bg70sP.index.values.tolist(), 
+         '80s': top15bg80sP.index.values.tolist(), 
+         '90s': top15bg90sP.index.values.tolist(),
+         '00s': top15bg00sP.index.values.tolist(), 
+         '10s': top15bg10sP.index.values.tolist(), 
+         'decades': top15bgDecadesP.index.values.tolist()}
+top15TFIDFPResults = pd.DataFrame(data=dTFIDFp)
+
+#export all results to excel
 def exportBigramsExcel():
     with pd.ExcelWriter('bigramsTFIDF.xlsx') as writer:  
-        top15bgEVB.to_excel(writer, sheet_name='bigrams eurovision basic')
-        top15bgDecadesB.to_excel(writer, sheet_name='bigrams decades basic ')
-        top15bg60sB.to_excel(writer, sheet_name='bigrams basic 60s')
-        top15bg70sB.to_excel(writer, sheet_name='bigrams basic 70s')
-        top15bg80sB.to_excel(writer, sheet_name='bigrams basic 80s')
-        top15bg90sB.to_excel(writer, sheet_name='bigrams basic 90s')
-        top15bg00sB.to_excel(writer, sheet_name='bigrams basic 00s')
-        top15bg10sB.to_excel(writer, sheet_name='bigrams basic 10s')
-
-        top15bgEVP.to_excel(writer, sheet_name='bigrams eurovision plus one')
-        top15bgDecadesP.to_excel(writer, sheet_name='bigrams decades plus one ')
-        top15bg60sP.to_excel(writer, sheet_name='bigrams plus one 60s')
-        top15bg70sP.to_excel(writer, sheet_name='bigrams plus one 70s')
-        top15bg80sP.to_excel(writer, sheet_name='bigrams plus one 80s')
-        top15bg90sP.to_excel(writer, sheet_name='bigrams plus one 90s')
-        top15bg00sP.to_excel(writer, sheet_name='bigrams plus one 00s')
-        top15bg10sP.to_excel(writer, sheet_name='bigrams plus one 10s')
-
-def exportBigramsFreqExcel():
-    with pd.ExcelWriter('bgFrequency.xlsx') as writer:  
-        getTop15Bigrams('EV').to_excel(writer, sheet_name='eurovision')
-        getTop15Bigrams('decades').to_excel(writer, sheet_name='decades')
-        getTop15Bigrams('60s').to_excel(writer, sheet_name='60s')
-        getTop15Bigrams('70s').to_excel(writer, sheet_name='70s')
-        getTop15Bigrams('80s').to_excel(writer, sheet_name='80s')
-        getTop15Bigrams('90s').to_excel(writer, sheet_name='90s')
-        getTop15Bigrams('00s').to_excel(writer, sheet_name='00s')
-        getTop15Bigrams('10s').to_excel(writer, sheet_name='10s')
-
-       
+        top15BigramsResults.to_excel(writer, sheet_name='Bigram Frequency')
+        top15TFIDFBResults.to_excel(writer, sheet_name='TF-IDF Basic')
+        top15TFIDFPResults.to_excel(writer, sheet_name='TF-IDF Plus One')
